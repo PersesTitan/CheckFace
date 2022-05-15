@@ -3,14 +3,13 @@ import cv2
 if __name__ == '__main__':
     face_cascade = cv2.CascadeClassifier('haarcascades/haarcascade_frontalface_default.xml')
     eye_cascade = cv2.CascadeClassifier('haarcascades/haarcascade_eye.xml')
-
     cap = cv2.VideoCapture(0)
-
+    
     while True:
         ret, img = cap.read()
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         faces = face_cascade.detectMultiScale(gray, 1.3, 5)
-
+        
         for (x, y, w, h) in faces:
             trc = (x, y)  # face rectangle's top-right corner
             blc = (x + w, y + h)  # face rectangle's bottom-left corner

@@ -1,0 +1,5 @@
+f = open("DATA.txt", "r")
+d = f.read()
+DATA = bytes(d, encoding='utf8')
+f.close()
+# print(DATA)
